@@ -45,7 +45,7 @@ FROM
             CAST(cdmTable.@cdmFieldName AS DATE) < COALESCE(
                 p.birth_datetime, 
                 CAST(CONCAT(
-                    p.year_of_birth,
+                    CAST(p.year_of_birth as Date),
                     COALESCE(
                         RIGHT('0' + CAST(p.month_of_birth AS VARCHAR), 2),
                         '01'
